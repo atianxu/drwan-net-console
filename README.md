@@ -3,8 +3,6 @@
 > 一个 Windows 上的「点一下就能开、点一下就能关」的本地代理控制台。
 > 界面中文、托盘常驻、订阅一键更新。**免费开源，节点自备。**
 
-![界面](docs/screenshot.png)
-
 ## 这是什么
 
 一个包了层好看外壳的 [mihomo](https://github.com/MetaCubeX/mihomo)（Clash.Meta 内核）控制台：
