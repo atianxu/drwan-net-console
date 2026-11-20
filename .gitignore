@@ -1,0 +1,22 @@
+# 运行时产物（不要进仓库）
+config.yaml
+!config.template.yaml
+sub.meta.yml
+console-meta.json
+console-state.json
+console-trace.log
+update.log
+status.txt
+config.bak.*.yaml
+*.new
+*.test.log
+
+# 内核与 Geo 数据：体积大，随 Release 分发
+mihomo.exe
+GeoIP.dat
+GeoSite.dat
+country.mmdb
+
+# 发布产物
+dist/
+build/

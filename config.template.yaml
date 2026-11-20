@@ -1,0 +1,49 @@
+# ================================================================
+# 科学上网控制台 · 空配置模板
+# ================================================================
+# 这个文件里 没有任何 节点、账号、订阅地址。
+# 第一次使用：打开控制台 → 点「立即更新」，脚本会去拉公开的免费节点列表，
+#             校验通过后整份替换成 config.yaml（多一次备份 + 自动重启内核）。
+# 有自己的机场订阅：把订阅链接写进 subscriptions 里的 subscription-sources.txt
+#             （一行一个），或直接改控制台「更新订阅」用的源列表。
+# 想手动填节点：把节点按 mihomo 格式写进下面的 proxies: 里即可。
+# ----------------------------------------------------------------
+
+mixed-port: 7890          # HTTP / SOCKS 混合代理端口
+allow-lan: false          # 只监听本机
+bind-address: 127.0.0.1
+mode: rule                # 规则模式：按 rules 分流
+log-level: warning
+ipv6: true
+
+external-controller: 127.0.0.1:9090   # 控制台从这里读状态（勿对外开放）
+secret: ''                            # 需要密码就填一个随机的，别用弱口令
+
+dns:
+  enable: true
+  ipv6: true
+  listen: 127.0.0.1:1053
+  enhanced-mode: redir-host
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  fallback:
+    - 8.8.8.8
+    - 1.1.1.1
+
+# ---------------- 节点：默认空 ----------------
+# 请自行填入订阅，或点控制台的「立即更新」拉公开免费列表。
+# 节点格式见 mihomo 官方文档的 config/proxies 一节。
+proxies: []
+
+proxy-groups: []
+
+# ---------------- 分流规则 ----------------
+rules:
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT
+  - MATCH,DIRECT

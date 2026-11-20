@@ -1,0 +1,4 @@
+https://cdn.jsdelivr.net/gh/peasoft/NoMoreWalls@master/list.meta.yml
+https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml
+https://ghproxy.net/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml
+https://gh-proxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml
